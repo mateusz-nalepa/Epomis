@@ -1,0 +1,56 @@
+<html>
+<head></head>
+<body>
+<div class="widget-body">
+    <div class="widget-content _complete">
+        <div class="widget-success">
+            Awesome! Your application for
+            <a href="/jobs/110247/software-developer-c-plus-plus-java-python-goldman-sachs">Software Developer: C++, Java, Python</a> at
+            <a href="/jobs/companies/goldman-sachs">Goldman Sachs</a> has been sent.
+            <a href="/users/signup">Sign up</a> to keep track of your job applications in one place.
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    Careers.GoogleAnalytics.sendEvent('apply', 'complete', 'onsite');
+</script>
+<script type="text/javascript">
+    var frameEl = (function () {
+        try {
+            return window.frameElement;
+        } catch (e) {
+        }
+    })();
+    (function () {
+        // Would be nice to do this when they're rendered, but to do so in _m() would require too much cleverness.
+        $(".widget-content a:not([href^=javascript])").attr('target', '_top');
+
+        var opts = {
+            url: '/jobs/110247/software-developer-c-plus-plus-java-python-goldman-sachs/similar',
+            complete: true
+        };
+
+        opts.success = $('.widget-success').html();
+
+        if (frameEl) {
+            window.parent.$(frameEl).trigger(
+                    'apply.success',
+                    opts);
+            return;
+        }
+        else if (window.self === window.top) {
+            // We're post apply, but not in an iframe, so we must be proxied through SO.
+            $("body").trigger('apply.success', opts);
+            return;
+        }
+
+        $('.widget-content._complete').show();
+    })();
+</script>
+<style>
+    .widget-content {
+        min-height: inherit;
+    }
+</style>
+</body>
+</html>
